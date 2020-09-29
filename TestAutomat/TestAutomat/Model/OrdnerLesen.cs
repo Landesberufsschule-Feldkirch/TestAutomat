@@ -1,0 +1,32 @@
+﻿using System.Collections.ObjectModel;
+using System.IO;
+
+namespace TestAutomat.Model
+{
+    public class OrdnerLesen
+    {
+        public ObservableCollection<DirectoryInfo> AlleTestOrdner { get; set; } = new ObservableCollection<DirectoryInfo>();
+
+        public OrdnerLesen()
+        {
+            OrdnerEinlesen();
+        }
+
+
+        private void OrdnerEinlesen()
+        {
+            var parentDirectory = new DirectoryInfo(".");
+
+            foreach (var ordnerInfo in parentDirectory.GetDirectories())
+            {
+                if ((ordnerInfo.Attributes & FileAttributes.Directory) != 0 && ordnerInfo.Name != ".git")
+                {
+                    if (ordnerInfo.Name.Contains("Tst_"))
+                    {
+                        AlleTestOrdner.Add(ordnerInfo);
+                    }
+                }
+            }
+        }
+    }
+}
