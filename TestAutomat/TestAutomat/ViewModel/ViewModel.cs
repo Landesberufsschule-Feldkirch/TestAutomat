@@ -12,13 +12,8 @@ namespace TestAutomat.ViewModel
         {
             _mainWindow = mw;
             ViAnzeige = new AutoTesterVisuAnzeigen();
-        }
-        
+        }       
      
-        private ICommand _btnProjektStarten;
-        // ReSharper disable once UnusedMember.Global
-        public ICommand BtnProjektStarten => _btnProjektStarten ?? (_btnProjektStarten = new RelayCommand(_mainWindow.ProjektStarten));
-        
-        
+     
     }
 }

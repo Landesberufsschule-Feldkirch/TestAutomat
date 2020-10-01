@@ -6,8 +6,17 @@
       "StartBit": 0,
       "AnzahlBit": 1,
       "Type": "-",
-      "Bezeichnung": "DI0",
-      "Kommentar": "Dummy Eingang 0"
+      "Bezeichnung": "S1",
+      "Kommentar": "Taster Aus"
+    },
+    {
+      "LaufendeNr": 1,
+      "StartByte": 0,
+      "StartBit": 1,
+      "AnzahlBit": 1,
+      "Type": "-",
+      "Bezeichnung": "S2",
+      "Kommentar": "Taster Ein"
     }
   ]
 }

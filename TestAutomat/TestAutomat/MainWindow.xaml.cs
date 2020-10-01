@@ -11,7 +11,7 @@ namespace TestAutomat
         public DirectoryInfo AktuellesProjekt { get; set; }
         public TestAutomat.Model.OrdnerLesen AlleOrdnerLesen;
 
-        private TestWindow _testWindow;
+        private AutoTesterWindow _autoTesterWindow;
         private readonly TestAutomat.ViewModel.AutoTesterViewModel _viewModel;
 
         public MainWindow()
@@ -68,8 +68,8 @@ namespace TestAutomat
         private void TestWindowOeffnen(object sender, RoutedEventArgs e)
         {
             TestWindowAktiv = true;
-            _testWindow = new TestWindow();
-            _testWindow.Show();
+            _autoTesterWindow = new AutoTesterWindow(AktuellesProjekt);
+            _autoTesterWindow.Show();
 
         }
     }

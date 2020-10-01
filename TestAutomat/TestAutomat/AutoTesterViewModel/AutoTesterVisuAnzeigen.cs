@@ -1,16 +1,16 @@
 ﻿using System.ComponentModel;
 using System.Threading;
 
-namespace TestAutomat.ViewModel
+namespace TestAutomat.AutoTesterViewModel
 {
     public class AutoTesterVisuAnzeigen : INotifyPropertyChanged
     {
         public AutoTesterVisuAnzeigen()
         {
-            System.Threading.Tasks.Task.Run(VisuAnzeigenTask);
+            System.Threading.Tasks.Task.Run(AutoTesterVisuAnzeigenTask);
         }
 
-        private void VisuAnzeigenTask()
+        private void AutoTesterVisuAnzeigenTask()
         {
             while (true)
             {

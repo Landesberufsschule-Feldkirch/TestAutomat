@@ -47,12 +47,9 @@
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
 
-
         <Button x:Name="btnTestWindow" Content="Test starten" Grid.Column="13" Grid.ColumnSpan="2"  Grid.Row="1" Grid.RowSpan="2" Click="TestWindowOeffnen" FontSize="16pt" IsEnabled="False"  />
 
         <StackPanel x:Name="StackPanel" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="15" />
         <WebBrowser x:Name="WebBrowser" Grid.Column="4" Grid.ColumnSpan="8" Grid.Row="2" Grid.RowSpan="16" />
-
-
     </Grid>
 </Window>

@@ -1,7 +1,7 @@
 ﻿using SPS_Starter.Commands;
 using System.Windows.Input;
 
-namespace TestAutomat.ViewModel
+namespace TestAutomat.AutoTesterViewModel
 {
     public class AutoTesterViewModel
     {
@@ -14,10 +14,7 @@ namespace TestAutomat.ViewModel
             ViAnzeige = new AutoTesterVisuAnzeigen();
         }
         
-     
-        private ICommand _btnProjektStarten;
-        // ReSharper disable once UnusedMember.Global
-        public ICommand BtnProjektStarten => _btnProjektStarten ?? (_btnProjektStarten = new RelayCommand(_mainWindow.ProjektStarten));
+         
         
         
     }
