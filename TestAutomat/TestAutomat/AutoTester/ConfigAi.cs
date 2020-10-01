@@ -4,6 +4,7 @@ namespace TestAutomat.AutoTester
 {
     public class ConfigAi
     {
+        // ReSharper disable once UnusedMember.Global
         public ObservableCollection<AiEinstellungen> AnalogeEingaenge { get; set; } = new ObservableCollection<AiEinstellungen>();
     }
 

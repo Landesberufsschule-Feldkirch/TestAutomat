@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace SPS_Starter.Commands
+namespace TestAutomat.Commands
 {
     public class RelayCommand : ICommand
     {

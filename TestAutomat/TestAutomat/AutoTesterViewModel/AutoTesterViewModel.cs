@@ -1,7 +1,4 @@
-﻿using SPS_Starter.Commands;
-using System.Windows.Input;
-
-namespace TestAutomat.AutoTesterViewModel
+﻿namespace TestAutomat.AutoTesterViewModel
 {
     public class AutoTesterViewModel
     {
@@ -13,9 +10,5 @@ namespace TestAutomat.AutoTesterViewModel
             _mainWindow = mw;
             ViAnzeige = new AutoTesterVisuAnzeigen();
         }
-        
-         
-        
-        
     }
 }

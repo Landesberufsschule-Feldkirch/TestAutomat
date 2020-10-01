@@ -10,7 +10,7 @@ namespace TestAutomat.AutoTesterViewModel
             System.Threading.Tasks.Task.Run(AutoTesterVisuAnzeigenTask);
         }
 
-        private void AutoTesterVisuAnzeigenTask()
+        private static void AutoTesterVisuAnzeigenTask()
         {
             while (true)
             {

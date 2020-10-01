@@ -2,67 +2,67 @@
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace TestAutomat
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public bool TestWindowAktiv { get; set; }
         public DirectoryInfo AktuellesProjekt { get; set; }
-        public TestAutomat.Model.OrdnerLesen AlleOrdnerLesen;
+        public Model.OrdnerLesen AlleOrdnerLesen;
 
         private AutoTesterWindow _autoTesterWindow;
-        private readonly TestAutomat.ViewModel.AutoTesterViewModel _viewModel;
 
         public MainWindow()
         {
             AlleOrdnerLesen = new Model.OrdnerLesen();
 
-            _viewModel = new ViewModel.AutoTesterViewModel(this);
+            var viewModel = new ViewModel.AutoTesterViewModel(this);
 
             InitializeComponent();
-            DataContext = _viewModel;
+            DataContext = viewModel;
 
             ProjekteAnzeigen();
 
-            btnTestWindow.Visibility = System.Diagnostics.Debugger.IsAttached ? Visibility.Visible : Visibility.Hidden;
+            BtnTestWindow.Visibility = System.Diagnostics.Debugger.IsAttached ? Visibility.Visible : Visibility.Hidden;
         }
 
         private void ProjekteAnzeigen()
         {
-            foreach (var Projekt in AlleOrdnerLesen.AlleTestOrdner)
+            foreach (var projekt in AlleOrdnerLesen.AlleTestOrdner)
             {
                 var rdo = new RadioButton
                 {
                     GroupName = "TestProjekte",
-                    Name = Projekt.Name,
+                    Name = projekt.Name,
                     FontSize = 14,
-                    Content = Projekt.Name,
+                    Content = projekt.Name,
                     VerticalAlignment = VerticalAlignment.Top,                    
-                    Tag = Projekt
+                    Tag = projekt
                 };
                 rdo.Checked += RadioButton_Checked;
-                this.StackPanel.Children.Add(rdo);
+                StackPanel.Children.Add(rdo);
             }
         }
 
         public void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            if (sender is RadioButton rb && rb.Tag is DirectoryInfo)
-            {
-                btnTestWindow.IsEnabled = true;
+            if (!(sender is RadioButton rb) || !(rb.Tag is DirectoryInfo)) return;
+            BtnTestWindow.IsEnabled = true;
+            BtnTestWindow.Background=new SolidColorBrush(Colors.LawnGreen);
 
-                AktuellesProjekt = rb.Tag as DirectoryInfo;
-                
-                var dateiName = $@"{AktuellesProjekt.FullName}\index.html";
+            AktuellesProjekt = rb.Tag as DirectoryInfo;
 
-                var htmlSeite = File.Exists(dateiName) ? File.ReadAllText(dateiName) : "--??--";
+            if (AktuellesProjekt == null) return;
+            var dateiName = $@"{AktuellesProjekt.FullName}\index.html";
 
-                var dataHtmlSeite = Encoding.UTF8.GetBytes(htmlSeite);
-                var stmHtmlSeite = new MemoryStream(dataHtmlSeite, 0, dataHtmlSeite.Length);
+            var htmlSeite = File.Exists(dateiName) ? File.ReadAllText(dateiName) : "--??--";
 
-                WebBrowser.NavigateToStream(stmHtmlSeite);                
-            }
+            var dataHtmlSeite = Encoding.UTF8.GetBytes(htmlSeite);
+            var stmHtmlSeite = new MemoryStream(dataHtmlSeite, 0, dataHtmlSeite.Length);
+
+            WebBrowser.NavigateToStream(stmHtmlSeite);
         }
 
         private void TestWindowOeffnen(object sender, RoutedEventArgs e)

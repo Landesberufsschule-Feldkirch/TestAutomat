@@ -19,12 +19,10 @@ namespace TestAutomat.Model
 
             foreach (var ordnerInfo in parentDirectory.GetDirectories())
             {
-                if ((ordnerInfo.Attributes & FileAttributes.Directory) != 0 && ordnerInfo.Name != ".git")
+                if ((ordnerInfo.Attributes & FileAttributes.Directory) == 0 || ordnerInfo.Name == ".git") continue;
+                if (ordnerInfo.Name.Contains("Tst_"))
                 {
-                    if (ordnerInfo.Name.Contains("Tst_"))
-                    {
-                        AlleTestOrdner.Add(ordnerInfo);
-                    }
+                    AlleTestOrdner.Add(ordnerInfo);
                 }
             }
         }

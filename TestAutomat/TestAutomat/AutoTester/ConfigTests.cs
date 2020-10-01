@@ -4,6 +4,7 @@ namespace TestAutomat.AutoTester
 {
     public class ConfigTests
     {
+        // ReSharper disable once UnusedMember.Global
         public ObservableCollection<TestsEinstellungen> AutomatischeSoftwareTests { get; set; } = new ObservableCollection<TestsEinstellungen>();
     }
 

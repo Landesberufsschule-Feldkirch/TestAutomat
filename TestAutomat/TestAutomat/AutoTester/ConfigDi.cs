@@ -4,6 +4,7 @@ namespace TestAutomat.AutoTester
 {
     public class ConfigDi
     {
+        // ReSharper disable once UnusedMember.Global
         public ObservableCollection<DiEinstellungen> DigitaleEingaenge { get; set; } = new ObservableCollection<DiEinstellungen>();
     }
 

@@ -10,14 +10,9 @@ namespace TestAutomat.AutoTester
         public ConfigAi ConfigAi { get; set; }
         public ConfigAa ConfigAa { get; set; }
 
-        private readonly DirectoryInfo _aktuellesProjekt;
-
 
         public GetConfig(DirectoryInfo aktuellesProjekt)
         {
-
-            _aktuellesProjekt = aktuellesProjekt;
-
             SetTestsConfig(aktuellesProjekt.FullName + "/test.json");
             SetDiConfig(aktuellesProjekt.FullName + "/DI.Json");
             SetDaConfig(aktuellesProjekt.FullName + "/DA.Json");

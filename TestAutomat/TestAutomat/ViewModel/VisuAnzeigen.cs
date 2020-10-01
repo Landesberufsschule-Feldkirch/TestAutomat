@@ -10,7 +10,7 @@ namespace TestAutomat.ViewModel
             System.Threading.Tasks.Task.Run(VisuAnzeigenTask);
         }
 
-        private void VisuAnzeigenTask()
+        private static void VisuAnzeigenTask()
         {
             while (true)
             {

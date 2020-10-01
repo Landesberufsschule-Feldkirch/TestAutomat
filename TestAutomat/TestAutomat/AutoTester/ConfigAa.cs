@@ -4,6 +4,7 @@ namespace TestAutomat.AutoTester
 {
     public class ConfigAa
     {
+        // ReSharper disable once UnusedMember.Global
         public ObservableCollection<AaEinstellungen> AnalogeAusgaenge { get; set; } = new ObservableCollection<AaEinstellungen>();
     }
 

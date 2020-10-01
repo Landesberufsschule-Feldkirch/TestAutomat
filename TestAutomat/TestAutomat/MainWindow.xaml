@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TestAutomat"
         mc:Ignorable="d"
         Title="TestAutomat" Height="650" Width="1024">
     <Grid>
@@ -47,9 +46,9 @@
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="btnTestWindow" Content="Test starten" Grid.Column="13" Grid.ColumnSpan="2"  Grid.Row="1" Grid.RowSpan="2" Click="TestWindowOeffnen" FontSize="16pt" IsEnabled="False"  />
+        <Button x:Name="BtnTestWindow" Content="Test starten" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Click="TestWindowOeffnen" FontSize="16pt" IsEnabled="False"  />
 
-        <StackPanel x:Name="StackPanel" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="15" />
-        <WebBrowser x:Name="WebBrowser" Grid.Column="4" Grid.ColumnSpan="8" Grid.Row="2" Grid.RowSpan="16" />
+        <StackPanel x:Name="StackPanel" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Grid.RowSpan="10" />
+        <WebBrowser x:Name="WebBrowser" Grid.Column="4" Grid.ColumnSpan="11" Grid.Row="2" Grid.RowSpan="16" />
     </Grid>
 </Window>
